@@ -1,0 +1,47 @@
+[     880ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:3001/auth/sign-in:0
+[     956ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    1008ms] [LOG] [HMR] connected @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    1095ms] [WARNING] Image with src "/images/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    1130ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    1348ms] [WARNING] Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    1426ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/favicon.ico:0
+[    2374ms] [WARNING] Image with src "/images/app-ui.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  126627ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  126660ms] [LOG] [HMR] connected @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  126770ms] [LOG] {} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  126772ms] [LOG] {} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  126776ms] [WARNING] Image with src "https://ucarecdn.com/019dd17d-b69b-4dea-a16b-60e0f25de1e9/propuser.png" has legacy prop "objectFit". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13 @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  126803ms] [LOG] {} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  126805ms] [LOG] {} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  126822ms] [LOG] {"width":80,"height":80} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  126825ms] [LOG] {} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  126826ms] [LOG] {} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  126839ms] [WARNING] Image with src "https://ucarecdn.com/019dd17d-b69b-4dea-a16b-60e0f25de1e9/propuser.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  126841ms] [WARNING] Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  141510ms] [LOG] ALL VALUES {content: Hello, can you help me book an appointment?, image: FileList} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  141524ms] [LOG] {} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  141526ms] [LOG] {} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  141532ms] [LOG] undefined @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  141533ms] [LOG] undefined @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  144877ms] [LOG] {} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  144878ms] [LOG] {} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  144884ms] [LOG] undefined @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  144884ms] [LOG] undefined @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  176261ms] [LOG] ALL VALUES {content: Can you share appointment link?, image: FileList} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  176273ms] [LOG] {} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  176275ms] [LOG] {} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  176288ms] [LOG] undefined @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  176289ms] [LOG] undefined @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  176291ms] [LOG] undefined @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  176291ms] [LOG] undefined @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  184902ms] [LOG] {} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  184903ms] [LOG] {} @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  184908ms] [LOG] undefined @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  184909ms] [LOG] undefined @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  184910ms] [LOG] undefined @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  184910ms] [LOG] undefined @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  197094ms] [LOG] 550e8400-e29b-41d4-a716-446655440000 @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  315708ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  315921ms] [LOG] [HMR] connected @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431

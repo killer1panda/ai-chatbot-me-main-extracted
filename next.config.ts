@@ -1,0 +1,22 @@
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ucarecdn.com",
+      },
+      {
+        protocol: "https",
+        hostname: "4qg4x4o2ju.ucarecd.net",
+      },
+      {
+        protocol: "https",
+        hostname: "**.ucarecd.net",
+      },
+    ],
+  },
+};
+
+export default nextConfig;
