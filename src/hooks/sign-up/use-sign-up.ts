@@ -5,19 +5,16 @@ import {
   UserRegistrationSchema,
 } from '@/schema/auth.schema'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useSignUp, useClerk } from '@clerk/nextjs'
+import { useSignUp } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { onCompleteUserRegistration } from '@/actions/auth'
 
 export const useSignUpForm = () => {
   const { toast } = useToast()
   const [loading, setLoading] = useState<boolean>(false)
-  const { signUp } = useSignUp()
-  const clerk = useClerk()
-  // @ts-ignore - Clerk type mismatch
-  const { setActive, isLoaded } = clerk
+  const { signUp, setActive, isLoaded } = useSignUp()
   const router = useRouter()
   const methods = useForm<UserRegistrationProps>({
     // @ts-ignore
@@ -33,15 +30,14 @@ export const useSignUpForm = () => {
     password: string,
     onNext: React.Dispatch<React.SetStateAction<number>>
   ) => {
-    if (!signUp) return
+    if (!isLoaded || !signUp) return
 
     try {
       await signUp.create({
         emailAddress: email,
-        password: password,
+        password,
       })
 
-      // @ts-expect-error Clerk v7 API method
       await signUp.prepareEmailAddressVerification({
         strategy: 'email_code',
       })
@@ -50,57 +46,69 @@ export const useSignUpForm = () => {
     } catch (error: any) {
       toast({
         title: 'Error',
-        description: error.errors[0].longMessage,
+        description:
+          error?.errors?.[0]?.longMessage || 'Something went wrong',
       })
     }
   }
 
   const onHandleSubmit = methods.handleSubmit(
-    // @ts-ignore Type mismatch due to Zod resolver inference
     async (values: UserRegistrationProps) => {
-      if (!isLoaded) return
+      if (!isLoaded || !signUp) return
 
       try {
         setLoading(true)
-        // @ts-expect-error Clerk v7 API method
-        const completeSignUp = await signUp!.attemptEmailAddressVerification({
+        const completeSignUp = await signUp.attemptEmailAddressVerification({
           code: values.otp,
         })
 
         if (completeSignUp.status !== 'complete') {
-          return { message: 'Something went wrong!' }
+          toast({
+            title: 'Error',
+            description: 'Verification failed',
+          })
+          setLoading(false)
+          return
         }
 
-        if (completeSignUp.status == 'complete') {
-          if (!signUp.createdUserId) return
+        if (!completeSignUp.createdUserId) {
+          toast({
+            title: 'Error',
+            description: 'User creation failed',
+          })
+          setLoading(false)
+          return
+        }
 
-          const registered = await onCompleteUserRegistration(
-            values.fullname,
-            signUp.createdUserId,
-            values.type
-          )
+        const registered = await onCompleteUserRegistration(
+          values.fullname,
+          completeSignUp.createdUserId,
+          values.type
+        )
 
-          if (registered?.status == 200 && registered.user) {
+        if (registered?.status === 200 && registered.user) {
+          if (completeSignUp.createdSessionId) {
             await setActive({
               session: completeSignUp.createdSessionId,
             })
-
-            setLoading(false)
-            router.push('/dashboard')
           }
-
-          if (registered?.status == 400) {
-            toast({
-              title: 'Error',
-              description: 'Something went wrong!',
-            })
-          }
+          setLoading(false)
+          router.push('/dashboard')
+          return
         }
+
+        toast({
+          title: 'Error',
+          description: 'Registration failed',
+        })
+        setLoading(false)
       } catch (error: any) {
         toast({
           title: 'Error',
-          description: error.errors[0].longMessage,
+          description:
+            error?.errors?.[0]?.longMessage || 'Something went wrong',
         })
+        setLoading(false)
       }
     }
   )

@@ -2,6 +2,7 @@ import { onLoginUser } from '@/actions/auth'
 import SideBar from '@/components/sidebar'
 import { ChatProvider } from '@/context/user-chat-context'
 import PushBootstrap from '@/components/pusher/push-bootstrap'
+import { redirect } from 'next/navigation'
 import React from 'react'
 
 type Props = {
@@ -10,9 +11,10 @@ type Props = {
 
 const OwnerLayout = async ({ children }: Props) => {
   const authenticated = await onLoginUser()
-  // if (!authenticated) {
-  //   return <div className="w-full h-screen flex flex-col">{children}</div>
-  // }
+
+  if (!authenticated) {
+    redirect('/auth/sign-in')
+  }
 
   return (
     <ChatProvider>

@@ -5,7 +5,6 @@ const SignInPage = () => {
   return (
     <div className="w-full flex justify-center">
       <SignIn
-        routing="hash"
         signUpUrl="/auth/sign-up"
         forceRedirectUrl="/conversation"
         fallbackRedirectUrl="/conversation"
